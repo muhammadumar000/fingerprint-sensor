@@ -17,7 +17,9 @@
     "fastify": "^4.19.2",
     "fastify-cors": "^6.1.0",
     "mongodb": "^5.7.0",
-    "mongoose": "^7.3.4",
+    "mongoose": "^7.3.4"
+  },
+  "devDependencies": {
     "nodemon": "^3.0.1"
   }
 }

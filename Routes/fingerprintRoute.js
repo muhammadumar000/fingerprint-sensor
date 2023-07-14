@@ -17,8 +17,6 @@ const getFingerprintById = {
             200:{
                 type: 'object',
                 properties: {
-                    _id: {type: 'string'},
-                    fingerprintId: {type: 'string'},
                     fingerprintName: {type:'string'},
                     LicensePlate: {type:'string'},
                 }

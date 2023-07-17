@@ -40,7 +40,7 @@ handler: FingerprintController.enteredUsersData
 
 
 async function fingerprintRoutes(fastify,options,done){
-    fastify.get('/users',enteredUsersData);  // 
+    fastify.get('/users',enteredUsersData);  //  
     fastify.get('/fingerprint/:id',getFingerprintById) // http://localhost:3000/fingerprint/1
 
     done();

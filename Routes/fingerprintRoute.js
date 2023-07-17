@@ -1,16 +1,6 @@
 
 const FingerprintController = require('../Controllers/fingerprintController.js');
 
-const fingerprint = {
-    type :  'object',
-    properties: {
-        _id: {type: 'string'},
-        fingerprintId: {type: 'string'},
-        fingerprintName: {type: 'string'},
-        LicensePlate : {type: 'string'}
-    }
-}
-
 const getFingerprintById = {
     schema:{
         response:{
@@ -33,12 +23,28 @@ const getFingerprintById = {
     handler: FingerprintController.getFingerprintById
 }
 
+const enteredUsersData = {
+    schema:{
+        response:{
+            200:{
+                type: 'object',
+                properties: {
+                    fingerprintName: {type:'string'},
+                    LicensePlate: {type:'string'},
+                }
+            }
+        }  
+},
+handler: FingerprintController.enteredUsersData
+};
 
-async function routes(fastify,options,done){
+
+async function fingerprintRoutes(fastify,options,done){
+    fastify.get('/users',enteredUsersData);  // 
     fastify.get('/fingerprint/:id',getFingerprintById) // http://localhost:3000/fingerprint/1
 
     done();
 }
 
-module.exports = routes;
+module.exports = fingerprintRoutes;
 

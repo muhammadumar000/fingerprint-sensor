@@ -35,12 +35,15 @@ async function run(){
 }
 
 run().catch(console.dir);
-fastify.listen(process.env.PORT || 3000, '0.0.0.0', (err) => {
-    if (err) {
-     fastify.log.error(err);
-     process.exit(1);
+
+fastify.listen({port: PORT},(err,address) => {
+    if(err){
+        fastify.log.error(err)
+        process.exit(1);
     }
-    console.log(`server running at ${fastify.server.address().port}`)
-   })
+    console.log(`Server is running on PORT ${address}`)
+})
+
+
 
 

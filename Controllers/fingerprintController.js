@@ -26,9 +26,8 @@ const enteredUsersData = async(req,res) => {
         
         const database = client.db("Fyp");
         const collection2 = database.collection('UsersEntered');
-        const data = await collection2.find({}).toArray();
-        console.log(data);
-
+        const data = await collection2.find().toArray();
+        console.log(`data: ${data}`);
         res.send(data);
         
     }

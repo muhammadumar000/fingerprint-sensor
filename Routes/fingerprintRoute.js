@@ -27,7 +27,7 @@ const enteredUsersData = {
     schema:{
         response:{
             200:{
-                type: 'object',
+                type: 'array',
                 properties: {
                     fingerprintName: {type:'string'},
                     LicensePlate: {type:'string'},
